@@ -1,5 +1,37 @@
-/* Left side - items */
+/* Top - tables */
+.tableContainer{
+	display: inline-block;
+}
 
+.tableList{
+	display: inline-block;
+	height:40px;
+	margin-right: 15px;
+}
+
+.tables{
+	cursor: pointer;
+	background-color: #fff;
+	width:100px;
+	height:30px;
+	border-radius: 5px;
+	border: 1px solid black;
+	box-shadow: 0px 0px 5px #103E72;
+}
+
+.tables:hover{
+	background-color: #EADFF5;
+}
+
+.available{
+	background-color: #c9ffc9;
+}
+
+.in-use{
+	background-color: #ffffce;
+}
+
+/* Left side - items */
 .itemList{
 	display: block;
 	border: 2px solid black;
@@ -128,11 +160,17 @@
 
 .total .total-left{
 	text-align: left;
+	line-height: 20px;
 }
 
 .total .total-right{
 	float:right;
 	margin-right: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	font-style: italic;
+	color: #FF7119;
+	line-height: 20px;
 }
 
 .checkout{

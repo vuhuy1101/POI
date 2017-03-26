@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import ItemOnReceipt from './ItemOnReceipt'
 
-const Receipt = ({ items, total, onCheckoutClicked }) => {
+const Receipt = ({ items, total, onCheckoutClicked, onSaveClicked }) => {
 	const hasItems = items.length > 0
 	const node = hasItems ? (
 		items.map(item =>
@@ -13,7 +13,7 @@ const Receipt = ({ items, total, onCheckoutClicked }) => {
 			/>
 		)
 	) : (
-		<em>Empty</em>
+		<tr></tr>
 	)
 
 	return (
@@ -22,7 +22,9 @@ const Receipt = ({ items, total, onCheckoutClicked }) => {
 				<h2>RECEIPT</h2>
 				<div>
 					<table className="receiptContent">
+						<tbody>
 						{node}
+						</tbody>
 					</table>
 				</div>
 			</div>
@@ -31,15 +33,15 @@ const Receipt = ({ items, total, onCheckoutClicked }) => {
 				<div className="total">
 				<p>
 					<span className="total-left">Total:</span>
-					<span className="total-right">&#36;{total}</span>
+					<span className="total-right">&#36; {total}</span>
 				</p>
 				</div>
 				<div className="checkout">
-				<button 
-					className="checkout-btn" 
-					onClick={onCheckoutClicked}
-					disabled={hasItems ? '' : 'disabled'}
-				>CHECKOUT</button>
+					<button 
+						className="checkout-btn" 
+						onClick={onCheckoutClicked}
+						disabled={hasItems ? '' : 'disabled'}
+					>CHECKOUT</button>
 				</div>
 			</div>
 		</div>

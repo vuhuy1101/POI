@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux'
 import receipt, * as fromReceipt from './receipt'
 import items, * as fromItems from './items'
+import tables, * as fromTables from './tables'
 
 export default combineReducers({
 	receipt,
-	items
+	items,
 })
 
 const getAddedIds = state => fromReceipt.getAddedIds(state.receipt)
@@ -24,3 +25,6 @@ export const getReceiptItems = state =>
 		...getItem(state, id),
 		quantity: getQuantity(state, id)
 	}))
+
+export const getTables = state => fromReceipt.getTables(state.receipt)
+export const getCurrentTable = (state) => fromReceipt.getCurrentTable(state.receipt)

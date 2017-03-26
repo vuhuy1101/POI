@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { checkout } from '../actions'
-import { getTotal, getReceiptItems } from '../reducers'
+import { getTotal, getReceiptItems, getCurrentTable } from '../reducers'
 import Receipt from '../components/Receipt'
 import classes from '../styles/app.css'
 
